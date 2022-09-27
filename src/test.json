@@ -1,0 +1,48 @@
+{
+    "Users":{
+        "1": {
+            "name":"victor"
+         }
+    },
+    "Storage":{
+        "Storage-A":{
+            "A1":{
+                "available": true
+            },
+            "A2":{
+                "available": true
+            },
+            "A3":{
+                "available": true
+            }
+        },
+
+        "Storage-B":{
+            "B1":{
+                "available": true
+            },
+            "B2":{
+                "available": true
+            },
+            "B3":{
+                "available": true
+            }
+        }},
+    "Project":{
+        "A1":{
+            "1": {
+                "name":"victor"
+             }
+        },
+        "A2":{
+            "1": {
+                "name":"victor"
+             }
+        },
+        "A3":{
+            "1": {
+                "name":"victor"
+             }
+        }
+    }
+}
