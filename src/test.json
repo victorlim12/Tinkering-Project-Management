@@ -7,13 +7,13 @@
     "Storage":{
         "Storage-A":{
             "A1":{
-                "available": true
+                "available": false
             },
             "A2":{
-                "available": true
+                "available": false
             },
             "A3":{
-                "available": true
+                "available": false
             }
         },
 
