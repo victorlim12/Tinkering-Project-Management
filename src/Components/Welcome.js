@@ -6,9 +6,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+import { FormControl, Select, MenuItem, InputLabel } from '@mui/material';
 
 import Parser from '../test'
-import BasicCard from './Card'
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme)
@@ -18,7 +18,13 @@ export default function SignInSide() {
     const user = Parser(1).user
     let Storage = Parser(1).Storage
     Storage = Object.keys(Storage)
-    console.log(Storage[1])
+    
+  const [store, setStore] = React.useState('');
+
+  const handleChange = (event) => {
+    setStore(event.target.value);
+  };
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,19 +56,27 @@ export default function SignInSide() {
         <Grid item xs={12} sm={6} md={7} component={Paper} elevation={6}>
           <Box
             sx={{
-              my: "25%",
+              my: "20%",
+              mx: "10%",
+              minWidth: '80%',
               display: 'inline-flex',
               flexDirection: 'row',
-              alignItems: 'center',
-              alignContent:'center',
-              overflow: 'auto'
             }}
           >
-            {Storage.map((name, index)=>
-            <BasicCard
-            StorageName ={name}/>)
-}
-            </Box>
+            <FormControl fullWidth>
+  <InputLabel id="demo-simple-select-label">Available Storage</InputLabel>
+  <Select
+    labelId="select-label"
+    id="select"
+    value={store}
+    label="Choose your storage"
+    onChange={handleChange}
+  >
+    {Storage.map((name, index)=>
+            <MenuItem value={name}>{name}</MenuItem>)}
+  </Select>
+</FormControl>
+      </Box>
 
         </Grid>
       </Grid>
