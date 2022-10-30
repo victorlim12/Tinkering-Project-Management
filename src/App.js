@@ -1,12 +1,13 @@
 import './App.css'
 import SignInSide from './Components/Welcome';
+import Storage12 from './Components/Storage';
 
 function App() {
 
 
   return (
     <div className="App">
-      <SignInSide/>
+      <Storage12/>
     </div>
   );
 }
