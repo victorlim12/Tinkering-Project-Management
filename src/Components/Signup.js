@@ -3,7 +3,7 @@ import UserDetails from './userDetails'
 import Storage12 from './Storage'
 import Welcome from './Welcome'
 import Card from './Card'
-import Storage1 from './Storage1'
+//import Storage1 from './Storage1'
 
 export default class Signup extends Component {
 	state = {
@@ -48,7 +48,7 @@ export default class Signup extends Component {
 				)
 			case 2: 
 				return (
-					<Storage1
+					<Storage12
 						nextStep={this.nextStep}
 						//handleChange={this.handleChange}
 						//values={ values }
