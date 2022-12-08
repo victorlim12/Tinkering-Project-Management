@@ -1,6 +1,6 @@
 import React from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './Hello.css'
+import './Form.css'
 
 const ContactForm = () => {
 	const [formStatus, setFormStatus] = React.useState('Submit')
@@ -9,11 +9,11 @@ const ContactForm = () => {
 		setFormStatus('Submitting...')
 		const{name, email, matric, tele, contact} = e.target.elements
 		let conFom = {
-			name: name.value,
-			email: email.value,
-			matric: matric.value,
-			tele: tele.value,
-			contact: contact.value,
+			Name: name.value,
+			Email: email.value,
+			Matric: matric.value,
+			Tele: tele.value,
+			Contact: contact.value,
 		}
 		console.log(conFom)
 	}

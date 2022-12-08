@@ -17,6 +17,7 @@ const UserDetails = ({ nextStep, handleChange, values }) => {
     const handleSubmit = (e) =>{
         e.preventDefault()
         setLoading(true)
+        console.log(e)
 
         fetch(scriptUrl, {
         method: 'POST', 

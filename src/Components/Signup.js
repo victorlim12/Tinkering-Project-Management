@@ -36,6 +36,7 @@ export default class Signup extends Component {
 		const {step} = this.state;
 		const{name, email, matric, contact, tele, project, start, end} = this.state;
 		const values = {name, email, matric, contact, tele, project, start, end}
+		console.log(values)
 
 		switch(step) {
 			case 1: //unregistered
