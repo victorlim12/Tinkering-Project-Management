@@ -1,78 +1,45 @@
 import * as React from 'react';
-import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import { clsx } from 'clsx';
+import Cinema from './Display';
+import {Collapse} from '@mui/material';
+// import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+// import { clsx } from 'clsx';
 import './Storage.css'
+import img1 from '../Images/test.jpg'
 
 //mock data
-import Parser from '../test';
+// import Parser from '../test';
 
 export default function Storage12(props){
-//sort first then find the last one
+//should add another layer 
+//supposedly is read from json (obtain from fetch)  
+const test={"available":["C1","C3","C5","C6","C7","C8"],"notavailable":["C2","C4"]}
 
-let Storage = Parser(1).Storage
-let Storage2 = Object.keys(Storage)
-let Max = []
+//state for seat selection
+const [selectedStore, setSelectedStore] = React.useState([])
 
-console.log(Storage2)
+//collapsible images
+const [open, setOpen] = React.useState(true);
+const handleClick = () => {
+  setOpen(!open);
+};
 
-const [store, setStore] = React.useState(Storage2[1]);
-  console.log(store)
-
-  const handleChange = (event) => {
-    setStore(event.target.value);
-  };
-
-Max = Object.keys(Storage[store])
-//Take Max
-let lastindex = Max.pop()
-let n = lastindex[1]
-
-//Store box
-const stores = Array.from({ length: 1 * n }, (_, i) => i)
-console.log(stores)
 
 return(
-    <div className='Storage'>
-    <FormControl fullWidth>
-    <InputLabel id="demo-simple-select-label">Available Storage</InputLabel>
-    <Select
-      labelId="select-label"
-      id="select"
-      value={store}
-      label="Choose your storage"
-      onChange={handleChange}
-    >
-      {Storage2.map((name, index)=>
-              <MenuItem value={name}>{name}</MenuItem>)}
-    </Select>
-    </FormControl>
-    <div className ='stores'>
-    {stores.map(number => {
-        return(
-    //   const isSelected = selectedSeats.includes(number)
-    //   const isOccupied = movie.occupied.includes(number)
-        <span
-          tabIndex="0"
-          key={number}
-          className="store"
-        //   className={clsx(
-        //     'seat',
-        //     isSelected && 'selected',
-        //     isOccupied && 'occupied',
-        //   )}
-        //   onClick={isOccupied ? null : () => handleSelectedState(seat)}
-        //   onKeyPress={
-        //     isOccupied
-        //       ? null
-        //       : e => {
-        //           if (e.key === 'Enter') {
-        //             handleSelectedState(seat)
-        //           }
-        //         }
-        // }
-        />
-    )})}</div>
-  </div>
+  <div>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <h1 className='heading'>Storage Booking</h1>
+    <button className='button-style' onClick={handleClick} >Click to view images
+    <Collapse in={open} timeout="auto" unmountOnExit>
+      <img src={img1} width='700em' alt='test' className='dropdown-style'/>
+      </Collapse>
+      </button>
+  <Cinema
+  test={test}
+  selectedStore={selectedStore}
+  onSelectedStoreChange={selectedStore => setSelectedStore(selectedStore)}
+/>
+
+</div>
 
 )
 }
