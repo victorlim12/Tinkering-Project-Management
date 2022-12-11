@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Signup/>
+      <Storage12/>
     </div>
   );
 }

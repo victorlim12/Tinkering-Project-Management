@@ -1,37 +1,87 @@
 .Storage {
     margin-bottom: 18px;
-    perspective: 400px;
-  
+    margin: 4%;
     display: grid;
     place-items: center;
-    grid-gap: 24px;
+    grid-gap: 2rem;
+    overflow: scroll;
   }
-  
+
   .Storage .stores {
     display: grid;
-    grid-gap: 6px;
+    grid-gap: 1.2rem;
     grid-template-columns: repeat(8, min-content);
     align-items: center;
   }
   
-  .Storage .stores .store:nth-of-type(8n + 2) {
-    margin-right: 12px;
+  .Storage .stores .store:not(.occupied):hover,
+  .Storage .stores .store:not(.occupied):focus {
+    cursor: pointer;
+    background: #c1eac5;
+    transform: scale(1.05);
+  }
+  .Storage .stores .store.selected::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2px;
+    min-width: 8rem;
+    min-height: 6rem;
+    border-radius: 100%;
+    background: transparent;
+    border: 3px solid #7bc47f;
+    animation: show-off 0.8s;
+    visibility: hidden;
   }
   
-  .Storage .stores .store:nth-of-type(8n + 6) {
-    margin-right: 12px;
+  @keyframes show-off {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
   }
 
   .store {
     display: inline-block;
-    background: #626262;
-    width: 16px;
-    height: 12px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-  
+    background: #cfcfcf;
+    min-width: 8rem;
+    min-height: 6rem;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
     position: relative;
-    top: 1px;
   }
   
+  .store.selected {
+    background: #7bc47f !important;
+  }
+  
+  .store.occupied {
+    background: #Ea4c46;
+  }
+
+  .heading{
+    font-weight: 700;
+    font-family: 'Roboto';
+  }
+
+.button-style{
+  background-color: #000000; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-style .drodpown{
+  background-color: #Ea4c46; 
+  margin: 2%;
+}
