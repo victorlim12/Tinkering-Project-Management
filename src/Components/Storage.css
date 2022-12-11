@@ -85,3 +85,8 @@
   background-color: #Ea4c46; 
   margin: 2%;
 }
+
+.containers{
+  align-items: center;
+  justify-content: center;
+}

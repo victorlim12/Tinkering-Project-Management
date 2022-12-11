@@ -2,6 +2,7 @@
   text-align: center;
   /* background-color: rgba(0,48,93,1); */
   background-image: url('Images/bg2.jpg');
+  background-size: cover;
 }
 
 .Form{

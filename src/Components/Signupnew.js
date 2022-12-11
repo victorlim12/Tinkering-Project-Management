@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React from 'react'
 //import { makeStyles } from '@material-ui/core/styles';
 import { Container, Typography, Grid, TextField, Button } from '@mui/material'
 
@@ -10,8 +10,8 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
         <Typography  component="h1" variant="h4" fontWeight={600}>
           Garage Storage Space Booking
         </Typography>
-        <br />
         <form>
+        <br/>
           <Grid container spacing={2}>
               {/* Name */}
               <Grid item xs={12}>
@@ -25,7 +25,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   fullWidth
                 />
               </Grid>
-              <br />
               {/* Email */}
               <Grid item xs={12}>
                 <TextField 
@@ -38,7 +37,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   fullWidth
                 />
               </Grid>
-              <br />
               {/* Matric Number  */}
               <Grid item xs={12}>
                 <TextField 
@@ -51,7 +49,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   fullWidth
                 />
               </Grid>
-              <br />
               {/* Telegram */}
               <Grid item xs={12}>
                 <TextField 
@@ -64,7 +61,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   fullWidth
                 />
               </Grid>
-              <br />
               {/* Phone */}
               <Grid item xs={12}>
                 <TextField 
@@ -77,7 +73,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   fullWidth
                 />
               </Grid>
-              <br />
               {/* Project Description */}
               <Grid item xs={12}>
                 <TextField 
@@ -90,7 +85,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   fullWidth
                 />
               </Grid>
-              <br />
               {/* Start Date */}
               <Grid item xs={12}>
                 <TextField 
@@ -105,7 +99,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   InputLabelProps={{ shrink: true }}
                 />
               </Grid>
-              <br />
               {/* End date */}
               <Grid item xs={12}>
                 <TextField 
@@ -121,13 +114,12 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                 />
               </Grid>
           </Grid>
-          <br />
+          <br/>
           <Button 
             onClick={ () => {setPage(page+1);} }
             fullWidth
             variant="contained"
-            color="primary"
-          >
+            color="primary">
             Next
           </Button>
         </form>

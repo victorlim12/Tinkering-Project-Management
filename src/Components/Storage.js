@@ -1,10 +1,9 @@
 import * as React from 'react';
 import Cinema from './Display';
-import {Collapse} from '@mui/material';
-// import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-// import { clsx } from 'clsx';
 import './Storage.css'
-import img1 from '../Images/test.jpg'
+import img1 from '../Images/test.jpg';
+import SimpleAccordion from './Accordion';
+import {Button} from '@mui/material';
 
 //mock data
 // import Parser from '../test';
@@ -13,12 +12,6 @@ export default function Storage12({page, setPage, formData, setFormData, data}){
 
 //state for seat selection
 const [selectedStore, setSelectedStore] = React.useState([])
-//collapsible images
-const [open, setOpen] = React.useState(true);
-
-const handleClick = () => {
-  setOpen(!open);
-};
 
 const handleClick2 = ()=>{
   fetch('https://script.google.com/macros/s/AKfycby0EIRMrH9z5lshswYPyWp3GJmdpESDrKwZQqqeIOHSkrls2NslERW9vN8FPmmvf5Qq/exec',
@@ -36,13 +29,19 @@ const handleClick2 = ()=>{
 }
 
 return(
-  <div>
+  <div className='containers'>
     <h1 className='heading'>Storage Booking</h1>
-    <button className='button-style' onClick={handleClick} >Click to view images
-    <Collapse in={open} timeout="auto" unmountOnExit>
-      {/* <img src={img1} width='700em' alt='test' className='dropdown-style'/> */}
+    <SimpleAccordion text={'Click here to see the Real-Life Display'}>
+      <div>
+      <img src={img1} alt='test' style={{width: '90%',
+      height: 'auto'}}/>
+      </div>
+    </SimpleAccordion>
+    {/* <button className='button-style' onClick={handleClick} >Click to view images */}
+    {/* <Collapse in={open} timeout="auto" unmountOnExit>
+      <img src={img1} width='700em' alt='test' className='dropdown-style'/>
       </Collapse>
-      </button>
+      </button> */}
   <Cinema
   test={data}
   selectedStore={selectedStore}
@@ -52,8 +51,12 @@ return(
   page={page} 
   setPage={setPage}
 />
-<button onClick={handleClick2}>Submit</button>
-
+<Button 
+           onClick={handleClick2}
+            variant="contained"
+            color="primary"
+            size='large'
+          >Submit</Button>
 </div>
 
 )
