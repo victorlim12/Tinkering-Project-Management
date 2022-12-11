@@ -26,7 +26,6 @@
   /** Top, bottom, right, and left spacing between form and it's content **/
   padding:20px;
   /** Spacing from the top **/
-  margin-top:10px;
   overflow: auto;
 }
 

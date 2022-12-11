@@ -95,7 +95,7 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
               </Grid>
           <br/>
           <Button 
-            onClick={ () => {setPage(page+1);} }
+            onSubmit={ () => {setPage(page+1);} }
             fullWidth
             variant="contained"
             color="primary">
