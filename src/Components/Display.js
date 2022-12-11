@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import clsx from 'clsx'
 import './Storage.css'
 
@@ -48,7 +48,9 @@ export default function Cinema({ test, selectedStore, onSelectedStoreChange, pag
                         }
                       }
                 }
-              />
+              >
+                <p>{store}</p>
+              </span>
             )
           })}
         </div>

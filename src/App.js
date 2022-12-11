@@ -1,6 +1,6 @@
 import './App.css'
-import Storagenew from './Deprecated/Storagenew';
 import Signupnew from './Components/Signupnew'
+import Account from './Components/Intro';
 import {useState} from 'react'
 import Storage12 from './Components/Storage';
 import Loadingpage from './Components/Loading';
@@ -48,6 +48,12 @@ function App() {
 
   console.log(formData)
   const ComponentList = [
+    <Account 
+      formData={formData}
+      setFormData={setFormData}
+      page={page} 
+      setPage={setPage}
+    />,
     <Signupnew 
       formData={formData}
       setFormData={setFormData}

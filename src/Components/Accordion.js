@@ -10,7 +10,7 @@ export default function SimpleAccordion(props) {
     <div style={{display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',}}>
-      <Accordion sx={{width:'50%', justifySelf:'center'}}>
+      <Accordion sx={{width:'60%', justifySelf:'center'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"

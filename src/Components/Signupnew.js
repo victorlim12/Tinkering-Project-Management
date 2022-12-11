@@ -5,26 +5,15 @@ import { Container, Typography, Grid, TextField, Button } from '@mui/material'
 const Signupnew = ({page, setPage, formData, setFormData}) => {
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" >
       <div>
         <Typography  component="h1" variant="h4" fontWeight={600}>
           Garage Storage Space Booking
         </Typography>
         <form>
         <br/>
-          <Grid container spacing={2}>
+          <Grid container rowSpacing={2} maxWidth={'sm'}>
               {/* Name */}
-              <Grid item xs={12}>
-                <TextField 
-                  required
-                  //placeholder="Name"
-                  label="Name"
-                  value={formData.Name}
-                  onChange={(e) => setFormData({ ...formData, Name: e.target.value })}
-                  size="small"
-                  fullWidth
-                />
-              </Grid>
               {/* Email */}
               <Grid item xs={12}>
                 <TextField 
@@ -38,17 +27,7 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                 />
               </Grid>
               {/* Matric Number  */}
-              <Grid item xs={12}>
-                <TextField 
-                  required
-                  //placeholder="Matric Number"
-                  label="Matric Number"
-                  value={formData.Matric}
-                  onChange={(e) => setFormData({ ...formData, Matric: e.target.value })}
-                  size="small"
-                  fullWidth
-                />
-              </Grid>
+            
               {/* Telegram */}
               <Grid item xs={12}>
                 <TextField 
@@ -60,7 +39,7 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   size="small"
                   fullWidth
                 />
-              </Grid>
+                </Grid>      
               {/* Phone */}
               <Grid item xs={12}>
                 <TextField 
@@ -113,7 +92,7 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   InputLabelProps={{ shrink: true }}
                 />
               </Grid>
-          </Grid>
+              </Grid>
           <br/>
           <Button 
             onClick={ () => {setPage(page+1);} }

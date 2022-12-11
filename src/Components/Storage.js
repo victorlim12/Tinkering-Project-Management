@@ -31,9 +31,9 @@ const handleClick2 = ()=>{
 return(
   <div className='containers'>
     <h1 className='heading'>Storage Booking</h1>
-    <SimpleAccordion text={'Click here to see the Real-Life Display'}>
+    <SimpleAccordion text={'Display'}>
       <div>
-      <img src={img1} alt='test' style={{width: '90%',
+      <img src={img1} alt='test' style={{width: '100%',
       height: 'auto'}}/>
       </div>
     </SimpleAccordion>
