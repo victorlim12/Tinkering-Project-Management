@@ -37,11 +37,10 @@ const handleClick2 = ()=>{
 
 return(
   <div>
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
     <h1 className='heading'>Storage Booking</h1>
     <button className='button-style' onClick={handleClick} >Click to view images
     <Collapse in={open} timeout="auto" unmountOnExit>
-      <img src={img1} width='700em' alt='test' className='dropdown-style'/>
+      {/* <img src={img1} width='700em' alt='test' className='dropdown-style'/> */}
       </Collapse>
       </button>
   <Cinema

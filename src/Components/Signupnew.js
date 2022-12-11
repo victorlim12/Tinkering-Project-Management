@@ -7,7 +7,7 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
   return (
     <Container component="main" maxWidth="xs">
       <div>
-        <Typography  component="h1" variant="h5">
+        <Typography  component="h1" variant="h4" fontWeight={600}>
           Garage Storage Space Booking
         </Typography>
         <br />
@@ -23,7 +23,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   onChange={(e) => setFormData({ ...formData, Name: e.target.value })}
                   size="small"
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <br />
@@ -37,7 +36,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   onChange={(e) => setFormData({ ...formData, Email: e.target.value })}                 
                   size="small"
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <br />
@@ -51,7 +49,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   onChange={(e) => setFormData({ ...formData, Matric: e.target.value })}
                   size="small"
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <br />
@@ -65,7 +62,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   onChange={(e) => setFormData({ ...formData, Tele: e.target.value })}
                   size="small"
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <br />
@@ -79,7 +75,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   onChange={(e) => setFormData({ ...formData, Contact: e.target.value })}
                   size="small"
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <br />
@@ -93,7 +88,6 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
                   onChange={(e) => setFormData({ ...formData, Project_Description: e.target.value })}
                   size="small"
                   fullWidth
-                  InputLabelProps={{ shrink: true }}
                 />
               </Grid>
               <br />

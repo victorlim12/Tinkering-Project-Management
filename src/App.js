@@ -5,8 +5,18 @@ import {useState} from 'react'
 import Storage12 from './Components/Storage';
 import Loadingpage from './Components/Loading';
 import React from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 function App() {
+
+  const darkTheme = createTheme({
+    typography: {
+      fontFamily: 'Helvetica Neue',
+    },
+    palette: {
+      mode: 'light',
+    },
+  });
   const [data, setData] = useState({})
   const [loading, setLoading]= useState(true)
   React.useEffect(() => {
@@ -54,13 +64,20 @@ function App() {
     />
   ];
   return (
+    <ThemeProvider theme={darkTheme}>
     <div className="App">{
       loading?(
         <Loadingpage/>
       ):
+      
+      <div className='container'> 
+      <div className='Form'>
       <div>{ComponentList[page]}</div>
+      </div>
+      </div>
     }
     </div>
+    </ThemeProvider>
   );
 }
 
