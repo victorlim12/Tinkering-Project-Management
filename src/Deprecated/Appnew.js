@@ -1,12 +1,14 @@
-import './App.css'
-import Storagenew from './Components/Storagenew';
-import Signupnew from './Components/Signupnew'
+// import './App.css'
+import Storagenew from './Storagenew';
+import Signupnew from '../Components/Signupnew'
 import {useState} from 'react'
-import Storage12 from './Components/Storage';
+import Storage12 from '../Components/Storage';
+import Loadingpage from '../Components/Loading';
 import React from 'react';
 
 function Appnew() {
   const [data, setData] = useState({})
+  const [loading, setLoading]= useState(true)
   React.useEffect(() => {
    fetch('https://script.google.com/macros/s/AKfycby0EIRMrH9z5lshswYPyWp3GJmdpESDrKwZQqqeIOHSkrls2NslERW9vN8FPmmvf5Qq/exec',
     {
@@ -15,8 +17,10 @@ function Appnew() {
     }
     )
     .then(response => response.json())
-    .then((result) => setData(result)).catch((error)=>console.log(error))
-  },[])
+    .then((result) => {setData(result)
+      setLoading(false)}
+      ).catch((error)=>console.log(error))
+  },[setData])
   const [page, setPage] = useState(0);
   console.log(data)
 
@@ -50,8 +54,12 @@ function Appnew() {
     />
   ];
   return (
-    <div className="App">
+    <div className="App">{
+      loading?(
+        <Loadingpage/>
+      ):
       <div>{ComponentList[page]}</div>
+    }
     </div>
   );
 }

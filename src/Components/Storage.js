@@ -11,15 +11,11 @@ import img1 from '../Images/test.jpg'
 
 export default function Storage12({page, setPage, formData, setFormData, data}){
 
-//should add another layer 
-//supposedly is read from json (obtain from fetch)  
-// const test={"available":["C1","C3","C5","C6","C7","C8"],"notavailable":["C2","C4"]}
-
 //state for seat selection
 const [selectedStore, setSelectedStore] = React.useState([])
-console.log(data)
 //collapsible images
 const [open, setOpen] = React.useState(true);
+
 const handleClick = () => {
   setOpen(!open);
 };

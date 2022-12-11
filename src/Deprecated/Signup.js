@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UserDetails from './userDetails'
-import Storage12 from './Storage'
+import Storage12 from '../Components/Storage'
 import Welcome from './Welcome'
 import Card from './Card'
 //import Storage1 from './Storage1'

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
 
 import Parser from '../test'
-import Storage12 from './Storage'
+import Storage12 from '../Components/Storage'
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme)
