@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import clsx from 'clsx'
 import './Storage.css'
 
-export default function Cinema({ test, selectedStore, onSelectedStoreChange }) {
+export default function Cinema({ test, selectedStore, onSelectedStoreChange, page, setPage, formData, setFormData }) {
     let n = 8
     const stores = Array.from({ length: 1 * n }, (_, i) => i)
     console.log(selectedStore)
@@ -16,6 +16,7 @@ export default function Cinema({ test, selectedStore, onSelectedStoreChange }) {
         //modify allow to pick one only
       } else  {
         onSelectedStoreChange([store])
+        setFormData({ ...formData, Storage: store })
       }
     }
   
@@ -25,10 +26,9 @@ export default function Cinema({ test, selectedStore, onSelectedStoreChange }) {
         <div className ='stores'>
           {stores.map(store => {
             store= 'C'+String(store+1)
-            console.log(store)
             const isSelected = selectedStore.includes(store)
             const isOccupied = test.notavailable.includes(store)
-            console.log(isOccupied)
+            // console.log(isOccupied)
             return (
               <span
                 tabIndex="0"
