@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/project-storage/static/css/main.626c9c60.css",
-    "main.js": "/project-storage/static/js/main.62d5d644.js",
-    "static/media/bg2.jpg": "/project-storage/static/media/bg2.ad2df5b2e96d153c705c.jpg",
-    "static/media/test.jpg": "/project-storage/static/media/test.f85fe79bfab4304235e5.jpg",
-    "index.html": "/project-storage/index.html",
-    "main.626c9c60.css.map": "/project-storage/static/css/main.626c9c60.css.map",
-    "main.62d5d644.js.map": "/project-storage/static/js/main.62d5d644.js.map"
+    "main.css": "/Tinkering-Project-Management/static/css/main.7c5766a2.css",
+    "main.js": "/Tinkering-Project-Management/static/js/main.e5c5cef1.js",
+    "static/media/bg2.jpg": "/Tinkering-Project-Management/static/media/bg2.ad2df5b2e96d153c705c.jpg",
+    "static/media/test.jpg": "/Tinkering-Project-Management/static/media/test.f85fe79bfab4304235e5.jpg",
+    "index.html": "/Tinkering-Project-Management/index.html",
+    "main.7c5766a2.css.map": "/Tinkering-Project-Management/static/css/main.7c5766a2.css.map",
+    "main.e5c5cef1.js.map": "/Tinkering-Project-Management/static/js/main.e5c5cef1.js.map"
   },
   "entrypoints": [
-    "static/css/main.626c9c60.css",
-    "static/js/main.62d5d644.js"
+    "static/css/main.7c5766a2.css",
+    "static/js/main.e5c5cef1.js"
   ]
 }
