@@ -7,6 +7,7 @@
 
 .Form{
   width: fit-content; 
+  min-width: 30vw;
   max-width: 80vw;
   /** Sizeable height for the form **/
   height:fit-content;
@@ -72,4 +73,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Form2{
+  width: fit-content; 
+  min-width: 20vw;
+  max-width: 80vw;
+  min-height:20vh;
+  align-items: center;
+  /** Sizeable height for the form **/
+  height:fit-content;
+  /** Black color with opacity **/
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image:linear-gradient(to bottom right, rgba(255, 255, 255, 0.131), rgba(255,255,255,0));
+  backdrop-filter:blur(10px);
+  box-shadow: 0px 0px 10px rgba(30,30,30,0.5);
+  /** Responsive layout **/
+  display:flex;
+  /** One element on top of the other **/
+  flex-direction:column;
+  /** Vertically at the center **/
+  justify-content: center;
+  /** Smooth corners **/
+  border-radius:10px;
+  /** Top, bottom, right, and left spacing between form and it's content **/
+  padding:20px;
+  /** Spacing from the top **/
+  overflow: auto;
 }

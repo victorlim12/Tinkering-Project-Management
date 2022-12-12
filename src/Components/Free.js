@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 //import { makeStyles } from '@material-ui/core/styles';
-import { FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
+import { FormControl, InputLabel, Select, MenuItem, Button, Typography } from '@mui/material';
+import RemoveFromQueueIcon from '@mui/icons-material/RemoveFromQueue';
 
 const Free = ({page, setPage, formData, setFormData}) => {
 	const reader = require('g-sheets-api');
@@ -26,7 +27,10 @@ const Free = ({page, setPage, formData, setFormData}) => {
       }
     }
     )
-    .then(response => response.json())
+    .then(response => {response.json();
+		setPage(page+1)}
+	
+	)
     .then((result) => console.log(result)).catch((error)=>console.log(error))
 }
 
@@ -42,7 +46,6 @@ const Free = ({page, setPage, formData, setFormData}) => {
 			}
 			setData(options1)
 		}
-		//console.log(typeof(options1))
 	}
 	)
     .then(response => {response.json();})
@@ -55,7 +58,14 @@ const Free = ({page, setPage, formData, setFormData}) => {
 
 		return(
 			<div>
-				<p>HI</p>
+				<RemoveFromQueueIcon sx={{fontSize: 60}}/>
+				<Typography  component="h1" variant="h4" fontWeight={600}>
+          Checkout!
+        </Typography>
+        <Typography  component="h1" variant="h6" fontSize={15}>
+          Checkout after your project is done!
+        </Typography>
+		<br/>
 				<FormControl fullWidth> 
     <InputLabel id="demo-simple-select-label">Available Storage</InputLabel>
     <Select
@@ -67,8 +77,9 @@ const Free = ({page, setPage, formData, setFormData}) => {
       {data.map((name, index)=>
               <MenuItem value={name}>{name}</MenuItem>)}
     </Select>
+	<br/>
     </FormControl>
-				<Button variant='filled'
+				<Button variant='contained'
 					onClick={handleClick3}>
 					Delete
 				</Button>

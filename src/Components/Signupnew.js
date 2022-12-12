@@ -5,7 +5,21 @@ import StorageIcon from '@mui/icons-material/Storage';
 
 
 const Signupnew = ({page, setPage, formData, setFormData}) => {
-
+  const handleClick2 = ()=>{
+    fetch('https://script.google.com/macros/s/AKfycbzI_UfM50lhNdixJvIgKm48o0ckja4luLcZHMhOSYhUkVJXg2ZKyuOU33DigFJy88fh/exec',
+      {
+        redirect: "follow",
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        }
+      }
+      )
+      .then(response => {response.json();
+        setPage(page+1)})
+      .then((result) => console.log(result)).catch((error)=>console.log(error))
+  }
   return (
     <Container component="main" >
       <div>
@@ -101,12 +115,11 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
               </Grid>
           <br/>
           <Button 
-            onClick={ () => {setPage(page+1);} }
-            fullWidth
+           onClick={handleClick2}
             variant="contained"
-            color="primary">
-            Next
-          </Button>
+            color="primary"
+            size='large'
+          >Submit</Button>
         </form>
       </div>
     </Container>

@@ -9,25 +9,11 @@ import {Button, Typography} from '@mui/material';
 //mock data
 // import Parser from '../test';
 
-export default function Storage12({page, setPage, formData, setFormData, data}){
+export default function Storage12({page1, setPage1, formData, setFormData, data}){
 
 //state for seat selection
 const [selectedStore, setSelectedStore] = React.useState([])
 
-const handleClick2 = ()=>{
-  fetch('https://script.google.com/macros/s/AKfycby0EIRMrH9z5lshswYPyWp3GJmdpESDrKwZQqqeIOHSkrls2NslERW9vN8FPmmvf5Qq/exec',
-    {
-      redirect: "follow",
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      }
-    }
-    )
-    .then(response => response.json())
-    .then((result) => console.log(result)).catch((error)=>console.log(error))
-}
 
 return(
   <div className='containers'>
@@ -52,15 +38,16 @@ return(
   onSelectedStoreChange={selectedStore => setSelectedStore(selectedStore)}
   formData={formData}
   setFormData={setFormData}
-  page={page} 
-  setPage={setPage}
+  page={page1} 
+  setPage={setPage1}
 />
 <Button 
-           onClick={handleClick2}
+            onClick={ () => {setPage1(page1+1);} }
+            fullWidth
             variant="contained"
-            color="primary"
-            size='large'
-          >Submit</Button>
+            color="primary">
+            Next
+          </Button>
 </div>
 
 )

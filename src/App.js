@@ -8,6 +8,7 @@ import React from 'react';
 import CardInterface from './Components/Choice';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Free from './Components/Free';
+import { Lastpage } from './Components/Closing';
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
     .then((result) => {setData(result)
       setLoading(false)}
       ).catch((error)=>console.log(error))
-  },[setData])
+  },[])
   const [page, setPage] = useState(0);
   console.log(data)
 
@@ -57,32 +58,20 @@ function App() {
       page={page} 
       setPage={setPage}
     />,
-    // <CardInterface
-    //   formData={formData}
-    //   setFormData={setFormData}
-    //   page={page} 
-    //   setPage={setPage}
-    //   data={data}
-    // />,
-    <Free
-      formData={formData}
-      setFormData={setFormData}
-      page={page} 
-      setPage={setPage}/>,
-    <Signupnew 
-      formData={formData}
-      setFormData={setFormData}
-      page={page} 
-      setPage={setPage}
-    />
-    ,
-    <Storage12 
-      data={data}
-      formData={formData}
-      setFormData={setFormData}
-      page={page} 
-      setPage={setPage}
-    />
+    <CardInterface
+    formData={formData}
+    setFormData={setFormData}
+    page={page} 
+    setPage={setPage}
+    data={data}
+  />,
+  <Lastpage
+  formData={formData}
+  setFormData={setFormData}
+  page={page} 
+  setPage={setPage}
+  data={data}
+/>
   ];
   return (
     <ThemeProvider theme={darkTheme}>
