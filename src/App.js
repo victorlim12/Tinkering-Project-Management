@@ -7,6 +7,7 @@ import Loadingpage from './Components/Loading';
 import React from 'react';
 import CardInterface from './Components/Choice';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Free from './Components/Free';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
   const [data, setData] = useState({})
   const [loading, setLoading]= useState(true)
   React.useEffect(() => {
-   fetch('https://script.google.com/macros/s/AKfycby0EIRMrH9z5lshswYPyWp3GJmdpESDrKwZQqqeIOHSkrls2NslERW9vN8FPmmvf5Qq/exec',
+   fetch('https://script.google.com/macros/s/AKfycbyoKEJiBWXXf1xkijyxQFQRMTlKcWpM6yzs3NPbvMSOWF2Eh-Latt3gnsNgtWg4LQ/exec',
     {
       redirect: "follow",
       method: "GET",
@@ -44,7 +45,8 @@ function App() {
     Project_Description: "",
     Start: "",
     End: "",
-    Storage:""
+    Storage:"",
+    Request:"store"
   });
 
   console.log(formData)
@@ -62,6 +64,11 @@ function App() {
     //   setPage={setPage}
     //   data={data}
     // />,
+    <Free
+      formData={formData}
+      setFormData={setFormData}
+      page={page} 
+      setPage={setPage}/>,
     <Signupnew 
       formData={formData}
       setFormData={setFormData}

@@ -6,12 +6,30 @@ export default function Cinema({ test, selectedStore, onSelectedStoreChange, pag
     let n = 16
     const stores = Array.from({ length: 1 * n }, (_, i) => i)
     console.log(selectedStore)
+  
+    const [loading, setLoading]= React.useState(true)
+    const [data, setData] = React.useState({})
 
+  console.log(data)
+
+    function test2(store){
+      fetch('https://script.google.com/macros/s/AKfycbzI_UfM50lhNdixJvIgKm48o0ckja4luLcZHMhOSYhUkVJXg2ZKyuOU33DigFJy88fh/exec?store='+store,
+        {
+          redirect: "follow",
+          method: "GET",
+        }
+        )
+        .then(response => response.json())
+        .then((result) => {setData(result)
+          setLoading(false)}
+          ).catch((error)=>console.log(error))
+    }
     function handleSelectedState(store) {
       const isSelected = selectedStore.includes(store)
+
       if (isSelected) {
         onSelectedStoreChange(
-          selectedStore.filter(selectedStore => selectedStore !== store),
+          selectedStore.filter(selectedStore => selectedStore !== store)
         )
         //modify allow to pick one only
       } else  {
@@ -38,7 +56,7 @@ export default function Cinema({ test, selectedStore, onSelectedStoreChange, pag
                   isSelected && 'selected',
                   isOccupied && 'occupied',
                 )}
-                onClick={isOccupied ? null : () => handleSelectedState(store)}
+                onClick={isOccupied ? ()=>test2(store) : () => handleSelectedState(store)}
                 onKeyPress={
                   isOccupied
                     ? null
