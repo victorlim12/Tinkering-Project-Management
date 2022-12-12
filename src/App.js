@@ -5,6 +5,7 @@ import {useState} from 'react'
 import Storage12 from './Components/Storage';
 import Loadingpage from './Components/Loading';
 import React from 'react';
+import CardInterface from './Components/Choice';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 function App() {
@@ -54,6 +55,13 @@ function App() {
       page={page} 
       setPage={setPage}
     />,
+    // <CardInterface
+    //   formData={formData}
+    //   setFormData={setFormData}
+    //   page={page} 
+    //   setPage={setPage}
+    //   data={data}
+    // />,
     <Signupnew 
       formData={formData}
       setFormData={setFormData}

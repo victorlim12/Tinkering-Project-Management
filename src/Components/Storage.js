@@ -3,7 +3,8 @@ import Cinema from './Display';
 import './Storage.css'
 import img1 from '../Images/test.jpg';
 import SimpleAccordion from './Accordion';
-import {Button} from '@mui/material';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import {Button, Typography} from '@mui/material';
 
 //mock data
 // import Parser from '../test';
@@ -30,18 +31,21 @@ const handleClick2 = ()=>{
 
 return(
   <div className='containers'>
-    <h1 className='heading'>Storage Booking</h1>
+    <WorkOutlineIcon sx={{fontSize: 60}}/>
+    <Typography  component="h1" variant="h3" fontWeight={600}>
+          Pick a Space You Like!
+        </Typography>
+        <Typography  component="h1" variant="h6" fontWeight={400} fontSize={20}>
+          Grab one when it's still available!
+        </Typography>
+        <br/>
     <SimpleAccordion text={'Display'}>
       <div>
       <img src={img1} alt='test' style={{width: '100%',
       height: 'auto'}}/>
       </div>
     </SimpleAccordion>
-    {/* <button className='button-style' onClick={handleClick} >Click to view images */}
-    {/* <Collapse in={open} timeout="auto" unmountOnExit>
-      <img src={img1} width='700em' alt='test' className='dropdown-style'/>
-      </Collapse>
-      </button> */}
+
   <Cinema
   test={data}
   selectedStore={selectedStore}

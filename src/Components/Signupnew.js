@@ -1,14 +1,20 @@
 import React from 'react'
 //import { makeStyles } from '@material-ui/core/styles';
 import { Container, Typography, Grid, TextField, Button } from '@mui/material'
+import StorageIcon from '@mui/icons-material/Storage';
+
 
 const Signupnew = ({page, setPage, formData, setFormData}) => {
 
   return (
     <Container component="main" >
       <div>
+        <StorageIcon sx={{fontSize: 50}}/>
         <Typography  component="h1" variant="h4" fontWeight={600}>
-          Garage Storage Space Booking
+          You're good to go!
+        </Typography>
+        <Typography  component="h1" variant="h6" fontWeight={400} fontSize={16}>
+          Fill in Your Project's Particulars
         </Typography>
         <form>
         <br/>
@@ -95,7 +101,7 @@ const Signupnew = ({page, setPage, formData, setFormData}) => {
               </Grid>
           <br/>
           <Button 
-            onSubmit={ () => {setPage(page+1);} }
+            onClick={ () => {setPage(page+1);} }
             fullWidth
             variant="contained"
             color="primary">

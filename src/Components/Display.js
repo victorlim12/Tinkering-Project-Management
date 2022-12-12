@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import './Storage.css'
 
 export default function Cinema({ test, selectedStore, onSelectedStoreChange, page, setPage, formData, setFormData }) {
-    let n = 8
+    let n = 16
     const stores = Array.from({ length: 1 * n }, (_, i) => i)
     console.log(selectedStore)
 

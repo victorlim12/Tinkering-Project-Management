@@ -1,14 +1,19 @@
 import React from 'react'
 //import { makeStyles } from '@material-ui/core/styles';
 import { Container, Typography, Grid, TextField, Button } from '@mui/material'
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 const Account = ({page, setPage, formData, setFormData}) => {
 
   return (
     <Container component="main" >
       <div>
+        <AppRegistrationIcon sx={{ fontSize: 50 }}/>
         <Typography  component="h1" variant="h4" fontWeight={600}>
         Storage Space Booking
+        </Typography>
+        <Typography  component="h1" variant="h6" fontWeight={400} fontSize={16}>
+          You're off to a great start
         </Typography>
         <form>
         <br/>
