@@ -1,13 +1,10 @@
 import './App.css'
-import Signupnew from './Components/Signupnew'
 import Account from './Components/Intro';
 import {useState} from 'react'
-import Storage12 from './Components/Storage';
 import Loadingpage from './Components/Loading';
 import React from 'react';
 import CardInterface from './Components/Choice';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Free from './Components/Free';
 import { Lastpage } from './Components/Closing';
 
 function App() {
